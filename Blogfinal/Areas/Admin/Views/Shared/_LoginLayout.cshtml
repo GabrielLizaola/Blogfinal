@@ -1,0 +1,13 @@
+﻿<!DOCTYPE html>
+<head>
+    <title>@ViewData["Title"] - Blogfinal</title>
+    <link href="~/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <script src="~/dashboard/vendor/jquery/jquery.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    @await Component.InvokeAsync("Notyf")
+</body>

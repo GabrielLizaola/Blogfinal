@@ -1,0 +1,27 @@
+﻿@model Domain.ViewModels.HomeVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+</style>
+<div class="container">
+    @foreach (var post in Model.Posts!)
+    {
+        <div>
+             <a asp-controller="Blog" asp-action="Post" asp-route-slug="@post.Slug">
+                <h2>@post.Title</h2>
+                <h4>@post.ShortDescription</h4>
+             </a>
+             <h6 class="post-meta">
+                Posted by
+                <a>@post.ApplicationUser!.FirstName @post.ApplicationUser!.LastName on @post.CreatedDate.ToShortDateString()</a>
+             </h6>
+        </div>
+        <hr class="my-4" />
+    }
+</div>
+    

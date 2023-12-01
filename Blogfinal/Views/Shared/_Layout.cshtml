@@ -1,0 +1,34 @@
+﻿﻿@using Data;
+@using Data.Implementations;
+@inject ApplicationDbContext _context
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>@ViewData["Title"] - CyberBlog</title>
+    <link href="~/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="~/blog/assets/favicon.ico" />
+    <link href="~/blog/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand">CyberBlog</a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        @RenderBody()
+    </div>
+
+    <script src="~/dashboard/vendor/jquery/jquery.min.js"></script>
+    @await Component.InvokeAsync("Notyf")
+    <script src="~blog/js/scripts.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
